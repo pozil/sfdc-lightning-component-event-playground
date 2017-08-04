@@ -1,0 +1,31 @@
+<aura:component >
+    <aura:handler name="cmpEvent" event="c:cmpEvent" action="{!c.handleCmpEventBubble}"/>
+    <aura:handler name="cmpEvent" event="c:cmpEvent" action="{!c.handleCmpEventCapture}" phase="capture"/>
+    
+    <aura:attribute name="pausedCmpEvent" type="Object"/>
+    
+    <div style="border:solid 1px red; color:red;" class="slds-p-around_medium slds-m-around_medium">
+        <div class="slds-text-heading_medium">Owner</div>
+        
+        <div class="slds-form slds-form_compound">
+            <div class="slds-form-element__group">
+                <div class="slds-form-element__row">
+                    <lightning:select name="propagationToggle" aura:id="propagationToggle" label="Event propagation" class="slds-size_1-of-2">
+                        <option value="none">Standard behavior</option>
+                        <option value="stop-capture">Stop during capture phase</option>
+                        <option value="stop-bubble">Stop during bubble phase</option>
+                        <option value="pause-capture">Pause during capture phase</option>
+                        <option value="pause-bubble">Pause during bubble phase</option>
+                    </lightning:select>
+                    <div class="slds-form-element slds-size_1-of-2 slds-align-bottom">
+                    	<lightning:button label="Resume" onclick="{! c.onResumeCmpEvent }" iconName="utility:right" class="{!empty(v.pausedCmpEvent) ? 'slds-hide' : ''}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <c:container >
+            <c:eventEmitter />
+        </c:container>
+    </div>
+</aura:component>
