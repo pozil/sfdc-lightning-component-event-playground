@@ -5,9 +5,7 @@ This project is a sample Lightning application that demonstrates the use of Ligh
 
 
 ## Install
-1. Deploy the sample application with Salesforce DX by clicking on this button:
-
-[![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com)
+1. Deploy the sample application with the Salesforce CLI.
 
 2. Access the application from this URL:<br/>
 https://<b>&lt;YOUR_DOMAIN_HERE&gt;</b>.lightning.force.com/c/ComponentEventPlaygroundApp.app
